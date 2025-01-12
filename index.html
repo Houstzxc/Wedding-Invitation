@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Invitation</title>
+    <title>Тойға шақыру</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Times new roman', sans-serif;
             margin: 0;
             padding: 0;
             background: url('background.jpg') no-repeat center center fixed;
@@ -27,11 +27,40 @@
             background: rgba(0, 0, 0, 0.5);
             padding: 20px;
             border-radius: 10px;
+            color: #FF0000;
+        }
+
+        .address-container {
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid ##ffd700;
+            border-radius: 10px; /* Закруглённые углы */
+            max-width: 400px; /* Максимальная ширина контейнера */
+            background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый фон */
+            color: #FF0000;
         }
 
         .address {
             font-size: 1.5rem;
-            margin-top: 20px;
+            margin-top: 10px;
+        }
+
+        .map-button {
+            margin-top: 10px;
+        }
+
+        .map-button img {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            border: 2px solid #ffd700; 
+            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .map-button img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.8); 
         }
 
         .date {
@@ -42,40 +71,75 @@
         footer {
             margin-top: 20px;
             font-size: 1rem;
+			color: #ffd700;
         }
     </style>
 </head>
 <body>
-    <audio autoplay loop>
-        <source src="background-music.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+    <audio id="background-audio" autoloop>
+    <source src="background-music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<div style="margin-top: 20px;">
+    <button id="play-pause-button" style="padding: 10px 20px; border-radius: 50%;  width: 50px; height: 50px; background-color: #993333; display: flex; justify-content: center; align-items: center; cursor: pointer;">
+        Ойнату
+    </button>
+</div>
+
+<script>
+    // Получение элементов
+    const audio = document.getElementById('background-audio');
+    const playPauseButton = document.getElementById('play-pause-button');
+
+    // Добавление события для кнопки
+    playPauseButton.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play(); 
+            playPauseButton.textContent = 'Пауза'; // Изменить текст кнопки
+        } else {
+            audio.pause(); 
+            playPauseButton.textContent = 'Ойнату'; // Изменить текст кнопки
+        }
+    });
+</script>
 
     <header>
-        <h1>You Are Invited!</h1>
+        <h1>Сіз Шақырылдыңыз!</h1>
     </header>
 
     <div class="content">
-        <p>We are delighted to invite you to celebrate our wedding!</p>
-        <p class="date">Date: March 30, 2024</p>
-        <p>Join us for a day of love, joy, and celebration.</p>
+        <p>Сіздерді біздің үйлену тойымызды тойлауға шақыруға қуаныштымыз!</p>
+        <p>Сіздерді ұлымыз бен келініміз</p>
+        <p style = "color: #FFFF00; font-family: 'Edwardian Script ITC';">Нұрғали мен Гүлназдың</p>
+        <p>үйлену тойына шақырамыз!</p>
+        <p class="date">Өтетін Күні: 09.02.2025</p>
+        <img src="noroot.png" alt="Календарь">
+        <p>Тойдың басталу уақыты: 19:00</p>
 
-        <div class="address">
-            <p>Location: Rose Garden Hall</p>
-            <p>123 Wedding Lane, Love City</p>
+        <div class="address-container">
+            <div class="address">
+                <p style="color: #FF0000;">Орналасқан Жері: "Royal Rose"</p>
+                <p style="color: #FF0000;">Бәйдібек би 28</p>
+            </div>
+            <div class="map-button">
+                <a href="https://2gis.kz/shymkent/geo/70000001030294452" target="_blank" title="Картада көрсету">
+                    <img src="C:\Users\Администратор\Desktop\Site\2GIS_logo.png" alt="2GIS Icon">
+                </a>
+            </div>
         </div>
-
-        <p>RSVP by March 15, 2024</p>
     </div>
 
-    <footer>
-        <p>With love, Alex & Taylor</p>
-    </footer>
+<footer>
+    <p style="color: #FF0000; font-size: 1.2rem; font-weight: bold;">
+        Той өткізушілер: Жанар және Абдумомын
+    </p>
+</footer>
+
 
     <script>
-        // Simple JavaScript for custom interactions
         window.onload = function () {
-            alert('Welcome to our wedding invitation!');
+            alert('Біздің үйлену тойына шақыруымызға қош келдіңіз!');
         };
     </script>
 </body>
