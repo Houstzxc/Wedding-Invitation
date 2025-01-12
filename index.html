@@ -34,7 +34,7 @@
             margin: 20px auto;
             padding: 20px;
             border: 2px solid ##ffd700;
-            border-radius: 10px; /* Закруглённые углы */
+            border-radius: 10px; /* Закругленные углы */
             max-width: 400px; /* Максимальная ширина контейнера */
             background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый фон */
             color: #FF0000;
@@ -45,13 +45,10 @@
             margin-top: 10px;
         }
 
-        .map-button {
-            margin-top: 10px;
-        }
-
         .map-button img {
-            width: 50px;
-            height: 50px;
+            width: 100%; /* Сделает изображение адаптивным */
+            max-width: 50px; /* Ограничит максимальный размер */
+            height: auto; /* Соответствие высоты ширине */
             cursor: pointer;
             border: 2px solid #ffd700; 
             border-radius: 5px;
@@ -71,7 +68,14 @@
         footer {
             margin-top: 20px;
             font-size: 1rem;
-			color: #ffd700;
+            color: #ffd700;
+        }
+
+        /* Медиа-запрос для мобильных устройств */
+        @media (max-width: 768px) {
+            .map-button img {
+                max-width: 40px; /* Минимальный размер для маленьких экранов */
+            }
         }
     </style>
 </head>
@@ -105,16 +109,16 @@
 </script>
 
     <header>
-        <h1 style= "display: flex; justify-content: center; align-items: center;">Сіз Шақырылдыңыз!</h1>
+        <h1 style="display: flex; justify-content: center; align-items: center;">Сіз Шақырылдыңыз!</h1>
     </header>
 
     <div class="content">
         <p>Сіздерді біздің үйлену тойымызды тойлауға шақыруға қуаныштымыз!</p>
         <p>Сіздерді ұлымыз бен келініміз</p>
-        <p style = "color: #FFFF00; font-family: 'Edwardian Script ITC';">Нұрғали мен Гүлназдың</p>
+        <p style="color: #FFFF00; font-family: 'Edwardian Script ITC';">Нұрғали мен Гүлназдың</p>
         <p>үйлену тойына шақырамыз!</p>
         <p class="date">Өтетін Күні: 09.02.2025</p>
-        <img src="noroot.png" style="display: block; margin-left: auto; margin-right: auto;" alt="Календарь">
+        <img src="noroot.png" alt="Календарь">
         <p>Тойдың басталу уақыты: 19:00</p>
 
         <div class="address-container">
